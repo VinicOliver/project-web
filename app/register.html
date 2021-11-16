@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/styles/register.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script src="jquery.maskMoney.min.js" type="text/javascript"></script>
+    <title>Cadastrar Aulas - Eduka</title>
+</head>
+<body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+    <header>
+        <a href="index.html">Eduka</a>
+    </header>
+    <main>
+        <section>
+            <h1>Sobre você...</h1>
+            <div class="padding-left">
+                <p class="margin-bottom">Para poder ofertar algum conteúdo, precisamos saber algumas informações pessoais sobre você.</p>
+                <form onsubmit="return cadastro();">
+                    <label for="name">Nome completo</label>
+                    <input type="text" id="name" placeholder="Nome completo" required>
+                    <label for="phone">Número (WhatsApp)</label>
+                    <input type="text" id="phone" placeholder="(DDD) 9 1234-5678" required>
+                    <label for="photo">Link de uma foto sua:</label>
+                    <input type="file" id="photo" required>
+                    <label for="bio">Bio</label>
+                    <textarea name="bio" id="bio" cols="30" rows="10" required></textarea>
+                    <h1>Sobre sua aula...</h1>
+                    <p class="margin-bottom">Agora, precisamos de informações sobre a sua aula.</p>
+                    <label for="disciplinas">Pra começar nos diga em qual área você gostaria de ensinar:</label>
+                    <select name="disciplinas" id="subjects">
+                    </select>
+                    <label for="cost">E qual o valor da sua hora aula</label>
+                    <input type="text" id="cost" placeholder="R$" required>
+                    <button>Cadastrar!</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>
+            Plataforma Eduka - Todos os direitos reservados.
+        </p>
+    </footer>
+    <script src="/assets/scripts/teacher.js"></script>
+    <script src="/assets/scripts/cadastro.js"></script>    
+</body>
+</html>
