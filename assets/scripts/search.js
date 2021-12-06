@@ -1,17 +1,23 @@
+/**
+ * CamelCase para definição de funções, objetos, array etc,
+ * 
+ */
+
 document.querySelector('.filter').addEventListener('click', filter);
 
 let start = function () {
     renderizaProfessores();
     loadSelect();
-}
+};
 
 window.onload = start;
 
-const subjects = ["Artes", "Biologia", "Filosofia", "Física", "Geografia", "História", "Língua Espanhola", "Língua Inglesa", "Língua Portuguesa", 
-"Matemática", "Química", "Sociologia"];
+const subjects = ['Artes', 'Biologia', 'Filosofia', 'Física', 'Geografia', 'História', 'Língua Espanhola', 'Língua Inglesa', 'Língua Portuguesa', 
+'Matemática', 'Química', 'Sociologia'];
 
 let teachers = [];
 
+// 
 function getData() {
     teachers = JSON.parse(localStorage.getItem('teachers'));
 }
@@ -25,6 +31,7 @@ function loadSelect() {
     });
 }
 
+
 function renderizaProfessores() {
     getData();
 
@@ -32,24 +39,25 @@ function renderizaProfessores() {
     newSection.id = "content";
     // Inserir section no documento!!!
     //document.querySelector('#main').appendChild(newSection);
-    document.getElementsByTagName('main')[0].appendChild(newSection);
+    //document.getElementsByTagName('main')[0].appendChild(newSection);
+    main.appendChild(newSection);
 
-    if(teachers == null) {
+    if (teachers == null) {
         let newDiv = document.createElement('div');
         newDiv.className = "teachers";
 
         let newHeader = document.createElement('h1');
-        newHeader.innerText = "Infelizmente não conseguimos encontrar um professor :(";
+        newHeader.innerText = 'Infelizmente não conseguimos encontrar um professor :(';
 
         let newParagraph = document.createElement('p');
-        newParagraph.innerText = "Tente mudar os filtros, pode ser que a gete consiga encontrar numa próxima.";
+        newParagraph.innerText = 'Tente mudar os filtros, pode ser que a gete consiga encontrar numa próxima.';
 
         newDiv.appendChild(newHeader);
         newDiv.appendChild(newParagraph);
         document.querySelector('#content').appendChild(newDiv);
-    } else {
+    }else {
         let newHeader = document.createElement('h1');
-        newHeader.innerText = "Aqui estão os professores disponíveis para você";
+        newHeader.innerText = 'Aqui estão os professores disponíveis para você';
 
         let newDiv = document.createElement('div');
         newDiv.className = "teachers";
@@ -73,7 +81,7 @@ function filter() {
 
     // Apaga todo o conteúdo
     let section = document.querySelector('#content');
-    section.innerText = "";
+    section.innerText = '';
 
     // Cria nova área para conteúdo
     let newSection = document.createElement('section');
@@ -86,24 +94,24 @@ function filter() {
     // Filtra o array de professores
     professoresFiltrados = teachers.filter(teacher => {
         return teacher.subject == selectSubject;
-    })
+    });
 
     if (professoresFiltrados.length == 0) {
         let newDiv = document.createElement('div');
         newDiv.className = "teachers";
 
         let newHeader = document.createElement('h1');
-        newHeader.innerText = "Infelizmente não conseguimos encontrar um professor :(";
+        newHeader.innerText = 'Infelizmente não conseguimos encontrar um professor :(';
 
         let newParagraph = document.createElement('p');
-        newParagraph.innerText = "Tente mudar os filtros, pode ser que a gente consiga encontrar numa próxima.";
+        newParagraph.innerText = 'Tente mudar os filtros, pode ser que a gente consiga encontrar numa próxima.';
 
         newDiv.appendChild(newHeader);
         newDiv.appendChild(newParagraph);
         document.querySelector('#content').appendChild(newDiv);
-    } else {
+    }else {
         let newHeader = document.createElement('h1');
-        newHeader.innerText = "Aqui estão os professores disponíveis para você";
+        newHeader.innerText = 'Aqui estão os professores disponíveis para você';
 
         let newDiv = document.createElement('div');
         newDiv.className = "teachers";
@@ -124,6 +132,36 @@ function filter() {
 }
 
 function createrDivTeacher(photo, teacherName, subject, description, cost) {
+
+    let sbj;
+
+    for (var i = 0; i < subjects.length; i++) {
+        if (subject == i) {
+            sbj = subjects[i];
+        }            
+    }
+
+    let divTeacher =
+        `<article class="teacher">
+            <div class="content">
+                <div class="photo">
+                    <img src=${photo}></img>
+                </div>
+                <div class="info">
+                    <p>${teacherName}</p>
+                    <p>${sbj}</p>
+                    <p>Sobre/Bio: ${description}</p>
+                    <p>R$ ${cost}</p>
+                </div>
+            </div>
+            <button class="button">Entrar em contato</button>
+        </article>`;
+
+    
+    document.querySelector('.teachers').insertAdjacentHTML("beforeend", divTeacher);
+
+    /*
+    
     let newArticle = document.createElement('article');
     newArticle.className = 'teacher';
 
@@ -171,5 +209,5 @@ function createrDivTeacher(photo, teacherName, subject, description, cost) {
     divInfo.appendChild(newParagraph3);
     divInfo.appendChild(newParagraph4);
 
-    document.querySelector('.teachers').appendChild(newArticle);
+    document.querySelector('.teachers').appendChild(newArticle);*/
 }

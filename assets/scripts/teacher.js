@@ -8,3 +8,5 @@ class Teacher {
         this.cost = cost;
     }
 }
+
+export {Teacher};
