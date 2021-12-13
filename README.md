@@ -31,7 +31,7 @@ Eventos
 - [x] Evento de carregamento do documento - onload
 - [ ] Evento de movimento do mouse
 - [ ] Evento de teclado - usar charCode ou keyCode
-- [ ] Eventos de formulário - onfocus e onblur
+- [x] Eventos de formulário - onfocus e onblur
 - [ ] Imprimir alguma propriedade do objeto event recebido como parâmetro
 - [ ] Propagação de eventos no modelo bolha (usar target e currentTarget, ou seja, disparar o evento em um elemento filho e capturar em um elemento pai)
 
@@ -87,13 +87,13 @@ Formulário
 
 jQuery
 
-- [ ] Uso de seletores CSS - id, classe e tag
+- [x] Uso de seletores CSS - id, classe e tag
 - [ ] Uso de seletores hierárquicos estáticos - ancestral/descendente, pai/filho, anterior/próximo
 - [ ] Uso de seletores hierárquicos dinâmicos - parent/children/next
 - [ ] Efeitos fade ou slide
-- [ ] Especificar o tratador de algum evento via jQuery
-- [ ] Manipulação do CSS via função css() e addClass()/removeClass()
-- [ ] Manipulação do conteúdo de um input e div usando jQuery
+- [x] Especificar o tratador de algum evento via jQuery
+- [x] Manipulação do CSS via função css() e addClass()/removeClass()
+- [x] Manipulação do conteúdo de um input e div usando jQuery
 - [x] Aplicar um plugin do jQuery (por exemplo, jQuery Mask Plugin)
 
 Web Storage
