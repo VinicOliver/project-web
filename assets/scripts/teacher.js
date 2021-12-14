@@ -1,4 +1,4 @@
-class Teacher {
+export class Teacher {
     constructor(name, cellNumber, photo, biograph, subject, cost) {
         this.name = name;
         this.cellNumber = cellNumber;
@@ -8,5 +8,3 @@ class Teacher {
         this.cost = cost;
     }
 }
-
-export {Teacher};
