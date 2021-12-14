@@ -44,6 +44,13 @@ h1 {
     font-weight: 700;
 }
 
+.filter:hover {
+    cursor: pointer;
+    transition: .8s;
+    background-color: #9da9b1;
+    border-color: #9da9b1;
+}
+
 .content {
     display: grid;
     grid-template-columns: 20% 80%;
@@ -95,24 +102,25 @@ select:focus {
     padding-left: 10px;
 }
 
-.button {
-    margin-left: 350px;
-    padding: 10px;
-    width: 200px;
-    border-radius: 5px;
-    border: 1.8px solid black;
-    background-color: black;
-    color: white;
-    font-size: 1rem;
-    font-weight: 700;
+.link-area {
+    display: flex;
+    justify-content: right;
 }
 
+.link-button {
+    padding: 15px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    margin-right: 40px;
+}
 
-button:hover {
+.link-button:hover {
     cursor: pointer;
     transition: .8s;
     background-color: #9da9b1;
-    border: 1.8px solid #9da9b1;
 }
 
 footer {
@@ -123,4 +131,14 @@ footer {
 footer > p {
     text-align: center;
     color: white;
+}
+
+@media only screen and (max-width: 800px) {
+    body, main {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: .8rem;
+    }
 }
