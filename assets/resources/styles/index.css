@@ -71,3 +71,49 @@ footer > p {
     text-align: center;
     color: white;
 }
+
+@media (max-width: 800px) {
+    main {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .content {
+        display: block;
+        margin: 0 auto;
+        height: 200px;
+        width: 90%;
+        margin-bottom: 40px;
+    }
+
+    .left-content > a {
+        padding: 10px;
+        line-height: 2rem;
+    }
+
+    #text-content {
+        padding: 10px;
+        line-height: 2rem;
+    }
+
+    .right-content {
+        visibility: hidden;
+        height: 0;
+    }
+
+    .right-content > p {
+        font-size: 1rem;
+        height: 40px;
+    }
+
+    .link-area > a {
+        display: block;
+    }
+
+    .link {
+        margin: 15px auto;
+        width: 60%;
+        text-align: center;
+    }
+}

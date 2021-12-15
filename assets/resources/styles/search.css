@@ -133,12 +133,13 @@ footer > p {
     color: white;
 }
 
-@media only screen and (max-width: 800px) {
-    body, main {
-        width: 100%;
+@media (max-width: 800px) {
+    main {
+        margin: 0 auto;
+        width: 90%;
     }
 
-    h1 {
-        font-size: .8rem;
+    header, footer {
+        width: 100%;
     }
 }
